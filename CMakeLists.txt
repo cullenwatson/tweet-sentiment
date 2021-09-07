@@ -25,5 +25,5 @@ foreach(file IN LISTS input01 input02 input03)
 endforeach()
 
 # Create the executable for sorting
-add_executable(pa01_sentiment main.cpp DSString.cpp DSString.h)
+add_executable(pa01_sentiment main.cpp DSString.cpp DSString.h catch.hpp Tweets.cpp Tweets.h Word.cpp Word.h Functions.cpp Functions.h Test.cpp)
 
