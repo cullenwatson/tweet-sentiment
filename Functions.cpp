@@ -238,7 +238,7 @@ void printResults(char outputFile[]) {
 
         // output wrong id's
         for (int i = 0; i < idsWrong.size(); i++)
-            output << idsWrong[i] << endl;
+            output << setprecision(3)<<idsWrong[i] << endl;
         output.close();
     }
 

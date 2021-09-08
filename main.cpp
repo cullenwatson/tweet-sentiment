@@ -9,15 +9,17 @@ int main(int argc, char* argv[])
         test();
     }else{
         // get tweets
+        cout<<"Reading training file..."<<endl;
         readTrainFile(argv[1]);
-
         // get words
         addWords(positiveTweets, positiveWords);
         addWords(negativeTweets, negativeWords);
 
+        cout<<"Reading test file..."<<endl;
         // add test tweets and predicted sentiment to vector of type Tweets
         readTestFile(argv[2]);
 
+        cout<<"Calculating results..."<<endl;
         // read in actual sentiment and id's and put in another Tweet vector
         getActualSentiment(argv[3]);
 
@@ -25,7 +27,7 @@ int main(int argc, char* argv[])
         printResults(argv[4]);
 
 
-        cout << "done" << endl;
+        cout << "Complete!" << endl;
     }
 
     return 0;
