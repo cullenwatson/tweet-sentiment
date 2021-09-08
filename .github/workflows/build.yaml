@@ -9,7 +9,7 @@ env:
   ###   Output Files will follow input files
   ###   Note: These should be the actual names of the files.  No double quotes
   INPUT_FILES: ../data/train_dataset_20k.csv ../data/test_dataset_10k.csv ../data/test_dataset_sentiment_10k.csv
-  OUTPUT_FILES: ../results.csv
+  OUTPUT_FILES: results.csv
 
 jobs:
   build:
@@ -54,8 +54,7 @@ jobs:
         working-directory: ${{runner.workspace}}/build
         shell: bash
         run: ./$EXE_NAME $INPUT_FILES $OUTPUT_FILES
-                run: ./$EXE_NAME
-
+  
       - name: Copy output files to artifact directory
         working-directory: ${{runner.workspace}}/build
         run: |
