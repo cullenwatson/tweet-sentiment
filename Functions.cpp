@@ -234,11 +234,11 @@ void printResults(char outputFile[]) {
         float percentRight = (float)amountRight / tweetActualSentimentResults.size();
 
         // output percent right
-        output<< percentRight << endl;
+        output<< setprecision(3)<<percentRight << endl;
 
         // output wrong id's
         for (int i = 0; i < idsWrong.size(); i++)
-            output << setprecision(3)<<idsWrong[i] << endl;
+            output <<idsWrong[i] << endl;
         output.close();
     }
 
