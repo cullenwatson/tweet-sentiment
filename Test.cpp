@@ -16,7 +16,9 @@ TEST_CASE("TESTING STRING CLASS", "[string]"){
 
     SECTION("EQUALITY OPERATORS"){
         REQUIRE( s[0]==DSString("this is dsstring class") );
-        REQUIRE( s[0]==s[9] );
+        REQUIRE( s[1]==DSString("a second string") );
+        REQUIRE( s[5]==DSString("all capitals") );
+
         REQUIRE( s[4]=="" );
         REQUIRE( s[1]=="a second string" );
         REQUIRE( !(s[3]==s[5]) );
@@ -31,6 +33,12 @@ TEST_CASE("TESTING STRING CLASS", "[string]"){
         REQUIRE( str==s[2] );
         str = DSString("\n");
         REQUIRE(str==s[7]);
+
+        REQUIRE(str==DSString("\n"));
+        str = "ab";
+        REQUIRE(str==DSString("ab"));
+        str = "all capitals";
+        REQUIRE(str==DSString("all capitals"));
     }
     SECTION("ADDITION OPERATOR"){
         REQUIRE( DSString("abcd") ==s[6]+s[8]);
@@ -43,6 +51,23 @@ TEST_CASE("TESTING STRING CLASS", "[string]"){
         REQUIRE(s[8]>s[6]);
         REQUIRE(s[8]>s[4]);
         REQUIRE(s[5]>s[3]);
+
+        DSString str;
+        str = "aaaa";
+        REQUIRE( s[9]>str);
+        REQUIRE(s[5]>str);
+        REQUIRE(s[6]>str);
+    }
+    SECTION("LESS THAN OPERATOR"){
+        REQUIRE( s[1]<s[0]);
+        REQUIRE(s[6]<s[8]);
+        REQUIRE(s[3]<s[5]);
+
+        DSString str;
+        str = "zero";
+        REQUIRE( s[1]<str);
+        REQUIRE(s[5]<str);
+        REQUIRE(s[6]<str);
     }
     SECTION("[] Operator"){
         REQUIRE( s[0][1]=='h');
