@@ -16,16 +16,12 @@ void readTrainFile(char fileToOpen[]) {
             // read till first comma
             file.getline(sentiment, 361, ',');
 
-            // extra rest of line
-            file.getline(line, 361, '\n');
-            istringstream iss(line);
-
             for (int i = 0; i < 4; i++)
                 // parse till u get to last comma
-                iss.getline(tweet, 361, ',');
+                file.getline(tweet, 361, ',');
 
             // then read in the tweet after the last comma
-            iss.getline(tweet, 361, '\n');
+            file.getline(tweet, 361, '\n');
             addTweet(tweet, sentiment);
             i++;
         }
@@ -126,19 +122,52 @@ void removeChar(char word[], char c) {
 }
 
 vector<Tweets>tweetSentimentResults;
+void readTestFile(char testFile[]) {
+    //open file
+    int sentiment=0;
 
+    ifstream file(testFile);
+    char line[361], tweet[281], id[20];
+    if (file.is_open()) {
+        //remove header row in csv file
+        file.getline(line, 361, '\n');
+
+        int i = 0;
+        // loop till end of file
+        while (file && i < 10000) {
+            // get id
+            file.getline(id, 20, ',');
+
+            // parse line to get just the tweet
+            for (int i = 0; i < 3; i++)
+                file.getline(tweet, 361, ',');
+            file.getline(tweet, 361, '\n');
+
+
+            sentiment = predictTweet(tweet);
+            Tweets temp(id, sentiment);
+            tweetSentimentResults.push_back(temp);
+            i++;
+        }
+        file.close();
+    }
+}
 int predictTweet(char tweet[]) {
-    istringstream iss;
-    iss.str(tweet);
-    char word[200];
+    char* point;
+
+    point = strtok(tweet, " ");
     int sentimentScore = 0;
     // check every word and increase occurrence
-    while (iss >> word) {
-        bool isValidWord = validWord(word);
-        if (!isValidWord)
+    while (point != NULL) {
+        // check if word is valid
+        bool isValidWord = validWord(point);
+        if (!isValidWord) {
+            point = strtok(NULL, " ");
             continue;
-        chopUpWord(word);
-        wordExists(sentimentScore, word);
+        }
+        chopUpWord(point);
+        wordExists(sentimentScore, point);
+        point = strtok(NULL, " ");
     }
 
     // check total sentiment of tweet
@@ -162,44 +191,11 @@ void wordExists(int& sentimentScore, char word[]) {
 }
 
 vector<Tweets>tweetActualSentimentResults;
-void readTestFile(char testFile[]) {
-    //open file
-    ifstream file(testFile);
-    char line[361], tweet[281], id[20];
-    int sentiment;
-    //extract just the tweets from file
-    if (file.is_open()) {
-        //remove header line
-        file.getline(line, 361, '\n');
-        int i = 0;
-        while (file && i < 10000) {
-            // get id
-            file.getline(id, 20, ',');
-
-            // get entire line
-            file.getline(line, 361, '\n');
-            istringstream iss(line);
-
-            // parse line to get just the tweet
-            for (int i = 0; i < 3; i++)
-                iss.getline(tweet, 361, ',');
-
-            // then read in the tweet after the last comma
-            iss.getline(tweet, 361, '\n');
-            sentiment = predictTweet(tweet);
-            Tweets temp(id, sentiment);
-            tweetSentimentResults.push_back(temp);
-            i++;
-        }
-        file.close();
-    }
-}
 void getActualSentiment(char sentimentFile[]) {
     //open file
     ifstream file(sentimentFile);
     char line[361],id[20], sentiment[5];
 
-    istringstream iss;
     if (file.is_open()) {
         //remove header line
         file.getline(line, 361, '\n');
@@ -208,14 +204,19 @@ void getActualSentiment(char sentimentFile[]) {
         while (file && i < 10000) {
             file.getline(sentiment, 20, ',');
             file.getline(id, 20, '\n');
-
-            Tweets temp(id, stoi(sentiment));
+            int sentimentInt=0;
+            if (sentiment[0] == '4')
+                sentimentInt = 4;
+            else if (sentiment[0] == '0')
+                sentimentInt = 0;
+            Tweets temp(id, sentimentInt);
             tweetActualSentimentResults.push_back(temp);
             i++;
         }
         file.close();
     }
 }
+
 void printResults(char outputFile[]) {
     vector<DSString>idsWrong;
     ofstream output(outputFile);
