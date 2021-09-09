@@ -22,15 +22,15 @@ extern vector<DSString>positiveTweets;
 extern vector<DSString>negativeTweets;
 //put tweets into positive and negative vector based on their sentiment
 void readTrainFile(char[]);
-void addTweet(char tweet[], char sentiment[]);
+void addTweet(DSString tweet, DSString sentiment);
 
 // list of words to be filtered out of the tweets
 extern vector<DSString>nonsentimentalWords;
 // add words to positive and negative words list along with their occurrence
 void addWords(vector<DSString>&, vector<Word>&);
-void chopUpWord(char word[]);
+void chopUpWord(DSString* word);
 bool validWord(DSString word);
-void removeChar(char word[], char c);
+void removeChar(DSString* word, char c);
 // words split into positive and negative from corresponding tweet list
 extern vector<Word>positiveWords;
 extern vector<Word>negativeWords;
@@ -38,7 +38,7 @@ extern vector<Word>negativeWords;
 // predict sentiment of tweet, either 4 for positive or 0 for negative
 void readTestFile(char[]);
 int predictTweet(char tweet[]);
-void wordExists(int& sentimentScore, char word[]);
+void wordExists(int& sentimentScore, DSString& word);
 // list of tweets after classifying sentiment
 extern vector<Tweets>tweetSentimentResults;
 
@@ -48,6 +48,5 @@ extern vector<Tweets>tweetActualSentimentResults;
 
 // compare results and output
 void printResults(char[]);
-
 
 #endif //PA01_SENTIMENT_FUNCTIONS_H
