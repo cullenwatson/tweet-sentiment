@@ -11,6 +11,7 @@ void readTrainFile(char fileToOpen[]) {
     if (file.is_open()) {
         // remove header row
         file.getline(line, 361, '\n');
+
         int i = 0;
         while (file && i < 20000) {
             // read till first comma

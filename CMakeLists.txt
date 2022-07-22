@@ -12,9 +12,9 @@ set(CMAKE_CXX_STANDARD 17)
 #   set (input02 "train_target.csv")
 # etc....
 # if you need more, add them here and in the foreach stmt below.
-set (input01 "train_dataset_20k.csv")
-set (input02 "test_dataset_10k.csv")
-set (input03 "test_dataset_sentiment_10k.csv")
+set (input01 "data/train_dataset_20k.csv")
+set (input02 "data/test_dataset_10k.csv")
+set (input03 "data/test_dataset_sentiment_10k.csv")
 
 #
 ##########################################
@@ -25,5 +25,5 @@ foreach(file IN LISTS input01 input02 input03)
 endforeach()
 
 # Create the executable for sorting
-add_executable(pa01_sentiment main.cpp DSString.cpp DSString.h catch.hpp Tweets.cpp Tweets.h Word.cpp Word.h Functions.cpp Functions.h Test.cpp)
+add_executable(pa01_sentiment src/main.cpp src/DSString.cpp src/DSString.h src/Tweets.cpp src/Tweets.h src/Word.cpp src/Word.h src/Functions.cpp src/Functions.h)
 

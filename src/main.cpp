@@ -1,13 +1,9 @@
 #define CATCH_CONFIG_RUNNER
 #include "Functions.h"
-#include "catch.hpp"
-int test();
+
 int main(int argc, char* argv[])
 {
-    // check to make sure user entered file's needed for program execution
-    if (argc ==1) {
-        test();
-    }else{
+
         // get tweets
         cout<<"Reading training file..."<<endl;
         readTrainFile(argv[1]);
@@ -28,10 +24,7 @@ int main(int argc, char* argv[])
 
 
         cout << "Complete!" << endl;
-    }
+
 
     return 0;
-}
-int test(){
-    return Catch::Session().run();
 }
