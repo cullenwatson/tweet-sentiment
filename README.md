@@ -1,3 +1,5 @@
+<h2>Tweet Sentiment Analysis</h2>
+
 Sentiment anaylsis is the process of classifying a phrase or sentences as positive or negative sentiment.
 
 To determine the sentiment of tweets, I used a training dataset of 20k tweets with a pre-known sentiment to create a large collection
