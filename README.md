@@ -15,6 +15,6 @@ Three program arguments are needed the (1) training dataset, (2) testing dataset
 <br>
 To run
 
-### `./{name of executable} data/train_dataset_20k.csv data/test_dataset_10k.csv data/test_dataset_20.csv`
+### `./{name of executable} data/train_dataset_20k.csv data/test_dataset_10k.csv data/test_dataset_20k.csv`
 
 Results will be in `data/results.csv` with an accuracy score and a list of tweets that were classified incorrectly.
