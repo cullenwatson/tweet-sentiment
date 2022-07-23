@@ -10,7 +10,7 @@ new tweets by calculating its sentiment score. I then compared my results with t
 
 Overall, the sentiment accuracy was 68.1%. With larger datasets and training, I could see this number getting to 80+%.
 
-To run, 3 program arguments are needed the (1) training dataset, (2) testing dataset (3) testing dataset with pre-verified results
+Three program arguments are needed the (1) training dataset, (2) testing dataset (3) testing dataset with pre-verified results
 
 <br>
 To run
