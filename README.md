@@ -11,3 +11,10 @@ new tweets by calculating its sentiment score. I then compared my results with t
 Overall, the sentiment accuracy was 68.1%. With larger datasets and training, I could see this number getting to 80+%.
 
 To run, 3 program arguments are needed the (1) training dataset, (2) testing dataset (3) testing dataset with pre-verified results
+
+<br>
+To run
+
+### `./{name of executable} data/train_dataset_20k.csv data/test_dataset_10k.csv data/test_dataset_20.csv`
+
+Results will be in `data/results.csv` with an accuracy score and a list of tweets that were classified incorrectly.
