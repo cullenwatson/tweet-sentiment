@@ -1,29 +1,6 @@
-cmake_minimum_required(VERSION 3.15)
-project(pa01_sentiment)
-
-set(CMAKE_CXX_STANDARD 17)
-
-##########################################
-# Students, edit the items below.  In the quotes,
-# put the names of the input files as they should appear
-# in the argv param to main.
-# Example:
-#   set (input01 "train_data.csv")
-#   set (input02 "train_target.csv")
-# etc....
-# if you need more, add them here and in the foreach stmt below.
-set (input01 "data/train_dataset_20k.csv")
-set (input02 "data/test_dataset_10k.csv")
-set (input03 "data/test_dataset_sentiment_10k.csv")
-
-#
-##########################################
-
-# Copy data files to build dir
-foreach(file IN LISTS input01 input02 input03)
-    configure_file(${file} ${file} COPYONLY)
-endforeach()
+cmake_minimum_required(VERSION 3.18)
+project(tweet_sentiment_analysis)
 
 # Create the executable for sorting
-add_executable(pa01_sentiment src/main.cpp src/DSString.cpp src/DSString.h src/Tweets.cpp src/Tweets.h src/Word.cpp src/Word.h src/Functions.cpp src/Functions.h)
+add_executable(tweet_sentiment_analysis src/main.cpp src/DSString.cpp src/DSString.h src/Tweets.cpp src/Tweets.h src/Word.cpp src/Word.h src/Functions.cpp src/Functions.h)
 
