@@ -19,7 +19,7 @@ Overall, the sentiment accuracy was 68.1%. With larger datasets and training, I 
 
 ## Binary Link
 
-Download the exe [here](https://github.com/cullenwatson/tweet-sentiment-analysis/releases/tag/v1.0)
+Download the exe [here](https://github.com/cullenwatson/tweet-sentiment-analysis/releases/tag/v0.1)
 
 ## How to Compile and Run (using MinGW on Windows)
 
@@ -43,7 +43,7 @@ The program takes three command line args:
 
 To use the default test files, type:
 
-```tweet_sentiment_analysis ../data/train_dataset_20k.csv ../data/test_dataset_10k.csv ../data/test_dataset_20k.csv```
+```tweet_sentiment_analysis ../input/train_dataset_20k.csv ../input/test_dataset_10k.csv ../input/test_dataset_20k.csv ../output/results.csv```
 
-Results will be in `data/results.csv` with the project folder. The `results.csv` contians an accuracy score and a list of tweets that were classified incorrectly.
+Results will be in `output/results.csv` with the project folder. The `results.csv` contians an accuracy score and a list of tweets that were classified incorrectly.
 
