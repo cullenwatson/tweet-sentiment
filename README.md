@@ -35,11 +35,12 @@ Now run the `make` command
 
 And to run the generated executable:
 
-The program takes three command line args:
+The program takes four command line args:
 
 * training dataset location
 * test dataset location
-* test results dataset location
+* test dataset results location
+* output results dataset location
 
 To use the default test files, type:
 
