@@ -37,10 +37,10 @@ And to run the generated executable:
 
 The program takes four command line args:
 
-* training dataset location
-* test dataset location
-* test dataset results location
-* output results dataset location
+* training dataset file location
+* test dataset file location
+* test dataset with sentiment file location
+* output results file location
 
 To use the default test files, type:
 
