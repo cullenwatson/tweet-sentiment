@@ -11,7 +11,7 @@ To determine the sentiment of tweets, I used a training dataset of 20k tweets wi
 of words and its associated sentiment score. A value above 0 indicated that the word was more often seen in positive tweets and vice versa.
 
 A test dataset was used to determine the accuracy of this classification scheme. I classified
-new tweets by calculating its sentiment score. I then compared my results with the pre-determined results by the data provider.
+new tweets by calculating its sentiment score. I then compared my results with the pre-determined results given by the data provider.
 
 ## Results
 
