@@ -43,7 +43,7 @@ The program takes three command line args:
 
 To use the default test files, type:
 
-```tweet_sentiment_analysis ../input/train_dataset_20k.csv ../input/test_dataset_10k.csv ../input/test_dataset_20k.csv ../output/results.csv```
+```tweet_sentiment_analysis ../input/train_dataset_20k.csv ../input/test_dataset_10k.csv ../input/test_dataset_sentiment_10k.csv ../output/results.csv```
 
 Results will be in `output/results.csv` with the project folder. The `results.csv` contians an accuracy score and a list of tweets that were classified incorrectly.
 
