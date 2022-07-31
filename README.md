@@ -39,9 +39,9 @@ The program takes one command line args:
 
 * output results file location
 
-To use the default test files, type:
+To run the program, type:
 
-```tweet_sentiment_analysis ../output/results.csv```
+```tweet_sentiment_analysis results.csv```
 
-Results will be in `output/results.csv` with the project folder. The `results.csv` contians an accuracy score and a list of tweets that were classified incorrectly.
+The `results.csv` contians an accuracy score and a list of tweets that were classified incorrectly.
 
