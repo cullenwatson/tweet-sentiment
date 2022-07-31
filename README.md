@@ -21,6 +21,10 @@ Overall, the sentiment accuracy was 68.1%. With larger datasets and training, I 
 
 Download the exe [here](https://github.com/cullenwatson/tweet-sentiment-analysis/releases/tag/v0.1)
 
+## How to Compile and Run (Linux)
+
+[Video Demo](https://youtu.be/1FiGnzL5qQs)
+
 ## How to Compile and Run (using MinGW on Windows)
 
 Create a build folder in the project directory and navigate to the build folder
