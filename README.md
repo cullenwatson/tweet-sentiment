@@ -35,16 +35,13 @@ Now run the `make` command
 
 And to run the generated executable:
 
-The program takes four command line args:
+The program takes one command line args:
 
-* training dataset file location
-* test dataset file location
-* test dataset with sentiment file location
 * output results file location
 
 To use the default test files, type:
 
-```tweet_sentiment_analysis ../input/train_dataset_20k.csv ../input/test_dataset_10k.csv ../input/test_dataset_sentiment_10k.csv ../output/results.csv```
+```tweet_sentiment_analysis ../output/results.csv```
 
 Results will be in `output/results.csv` with the project folder. The `results.csv` contians an accuracy score and a list of tweets that were classified incorrectly.
 
