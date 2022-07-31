@@ -21,11 +21,13 @@ Overall, the sentiment accuracy was 68.1%. With larger datasets and training, I 
 
 Download the exe [here](https://github.com/cullenwatson/tweet-sentiment-analysis/releases/tag/v0.1)
 
-## How to Compile and Run (Linux)
+## How to Compile (Linux)
+
+Compile and build using CMake
 
 [Video Demo](https://youtu.be/1FiGnzL5qQs)
 
-## How to Compile and Run (using MinGW on Windows)
+## How to Compile (using MinGW on Windows)
 
 Create a build folder in the project directory and navigate to the build folder
 
@@ -37,15 +39,15 @@ Now run the `make` command
 
 ```mingw32-make```
 
-And to run the generated executable:
+## How to Run
 
-The program takes one command line args:
+The program takes one command line arg:
 
 * output results file location
 
 To run the program, type:
 
-```tweet_sentiment_analysis results.csv```
+```./tweet_sentiment_analysis results.csv```
 
 The `results.csv` contians an accuracy score and a list of tweets that were classified incorrectly.
 
