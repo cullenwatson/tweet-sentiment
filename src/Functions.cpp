@@ -254,9 +254,10 @@ void printResults(char outputFile[]) {
         float percentRight = (float)amountRight / tweetActualSentimentResults.size();
 
         // output percent right
-        output << setprecision(3)<<percentRight << endl;
+        output << "% of Tweets Classified Correctly: "<< setprecision(3)<<percentRight << endl;
 
         // output wrong id's
+        cout<<"\nTweet IDs of Incorrectly Classified Sentiment"<<endl;
         for (int i = 0; i < idsWrong.size(); i++)
             output << idsWrong[i] << endl;
         output.close();
